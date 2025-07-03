@@ -20,7 +20,7 @@ void help(){
     printf(
         "Usage: gxx <flags> <filename>" endl
         "-v : Verbose output" endl
-        "-o\"filename\" : Output file name" endl
+        "-o \"filename\" : Output file name" endl
         "-h : Help" endl
     );
 }
