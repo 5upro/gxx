@@ -3,7 +3,7 @@
 #include "utils.h"
 
 int main(int argc, char *argv[]){
-	char path[PATH_MAX], filePath[PATH_MAX], buf[PATH_MAX];
+	char path[MAX_PATH], filePath[MAX_PATH], buf[MAX_PATH];
 	currDir(path);
 
 	if(argc >= 2){
