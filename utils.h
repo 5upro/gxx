@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 #define ARGS_LEN 3
-#define PATH_MAX 4096
+#define MAX_PATH 4096
 #define BOTH -1
 #define NOTFOUND 0
 #define CLANG 1
@@ -14,13 +14,13 @@
 #ifdef _WIN32
 	#include <direct.h>
     char* currDir(char *buf){
-        if(_getcwd(buf, PATH_MAX) == NULL) return NULL;
+        if(_getcwd(buf, MAX_PATH) == NULL) return NULL;
         return buf;
 	}
 #elif __linux__
     #include <unistd.h>	
     char* currDir(char *buf){
-        if(getcwd(buf, PATH_MAX) == NULL) return NULL;
+        if(getcwd(buf, MAX_PATH) == NULL) return NULL;
         return buf;
 	}
 #endif
@@ -38,7 +38,7 @@ boolean
 const char *ARGS[] = { "-v", "-o", "-O3" };
 
 int isClang(const char *file){
-	char fileName[PATH_MAX];
+	char fileName[MAX_PATH];
 	sprintf(fileName, "%s.c", file);
 	FILE *f = fopen(fileName, "r");
 
@@ -48,7 +48,7 @@ int isClang(const char *file){
 }
 
 int isCpp(const char *file){
-	char fileName[PATH_MAX];
+	char fileName[MAX_PATH];
 	sprintf(fileName, "%s.cpp", file);
 	FILE *f = fopen(fileName, "r");
 
