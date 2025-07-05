@@ -37,6 +37,15 @@ boolean
 
 const char *ARGS[] = { "-v", "-o", "-O3" };
 
+unsigned long hash(const char *str){
+    unsigned long hash = 5381;
+    int c;
+
+    while ((c = *str++)) hash = ((hash << 5) + hash) + c; // hash * 33 + c
+	
+    return hash;
+}
+
 int isClang(const char *file){
 	char fileName[MAX_PATH];
 	sprintf(fileName, "%s.c", file);
