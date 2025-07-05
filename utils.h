@@ -12,17 +12,23 @@
 #define CPP 2
 
 #ifdef _WIN32
-	#include <direct.h>
-    char* currDir(char *buf){
-        if(_getcwd(buf, MAX_PATH) == NULL) return NULL;
-        return buf;
-	}
+#include <direct.h>
+
+#define SEP "\\"
+
+char* currDir(char *buf){
+	if(_getcwd(buf, MAX_PATH) == NULL) return NULL;
+	return buf;
+}
 #elif __linux__
-    #include <unistd.h>	
-    char* currDir(char *buf){
-        if(getcwd(buf, MAX_PATH) == NULL) return NULL;
-        return buf;
-	}
+#include <unistd.h>
+
+#define SEP "/"
+
+char* currDir(char *buf){
+	if(getcwd(buf, MAX_PATH) == NULL) return NULL;
+	return buf;
+}
 #endif
 
 typedef enum boolean { 

@@ -7,7 +7,7 @@ int main(int argc, char *argv[]){
 	currDir(path);
 
 	if(argc >= 2){
-		sprintf(filePath, "%s/%s", path, argv[1]);
+		sprintf(filePath, "%s" SEP "%s", path, argv[1]);
 		compile(filePath);
 	}
 	else{
