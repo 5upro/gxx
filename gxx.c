@@ -3,11 +3,11 @@
 #include "utils.h"
 
 int main(int argc, char *argv[]){
-	char path[MAX_PATH], filePath[MAX_PATH], buf[MAX_PATH];
+	char path[MAX_PATH], filePath[MAX_PATH];
 	currDir(path);
 
 	if(argc >= 2){
-		sprintf(filePath, "%s" SEP "%s", path, argv[1]);
+		sprintf(filePath, "%s" SEP "%s", path, argv[argc-1]);
 		compile(filePath);
 	}
 	else{

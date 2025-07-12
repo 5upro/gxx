@@ -43,6 +43,12 @@ boolean
 
 const char *ARGS[] = { "-v", "-o", "-O3" };
 
+typedef struct funcNode{
+	struct funcNode *next;
+	char flag[8];
+	void (*flagFunc) (const char *);
+}funcNode;
+
 unsigned long hash(const char *str){
     unsigned long hash = 5381;
     int c;
