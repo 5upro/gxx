@@ -49,6 +49,19 @@ typedef struct funcNode{
 	void (*flagFunc) (const char *);
 }funcNode;
 
+funcNode funcMap[10] = {
+    {NULL, "--", NULL},  
+    {NULL, "--", NULL},  
+    {NULL, "--", NULL},  
+    {NULL, "--", NULL},  
+    {NULL, "--", NULL},  
+    {NULL, "--", NULL},  
+    {NULL, "--", NULL},  
+    {NULL, "--", NULL},  
+    {NULL, "--", NULL},  
+    {NULL, "--", NULL},  
+};
+
 unsigned long hash(const char *str){
     unsigned long hash = 5381;
     int c;
@@ -91,21 +104,23 @@ void compile(const char *file){
 	int type = doesFileExist(file);
 	char cmd[128];
 
-	printf("Compiling...\n");
 	if(type == CLANG){
+		printf("Compiling...\n");
 		printf("C-Lang File Detected!\n");
 		sprintf(cmd, "gcc -o %s %s.c", file, file);
 		system(cmd);
+		printf("Done!\n");
 	}
 	else if(type == CPP){
+		printf("Compiling...\n");
 		printf("C++ File Detected!\n");
 		sprintf(cmd, "g++ -o %s %s.cpp", file, file);
 		system(cmd);
+		printf("Done!\n");
 	}
 	else{
 		printf("File %s does not exist\n", file);
 	}
-	printf("Done!\n");
 }
 
 #endif 
