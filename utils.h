@@ -50,16 +50,56 @@ typedef struct funcNode{
 }funcNode;
 
 funcNode funcMap[10] = {
-    {NULL, "--", NULL},  
-    {NULL, "--", NULL},  
-    {NULL, "--", NULL},  
-    {NULL, "--", NULL},  
-    {NULL, "--", NULL},  
-    {NULL, "--", NULL},  
-    {NULL, "--", NULL},  
-    {NULL, "--", NULL},  
-    {NULL, "--", NULL},  
-    {NULL, "--", NULL},  
+    { //funcMap[0]
+		NULL, 
+		"-V", 
+		NULL
+	}, 
+    { //funcMap[1]
+		NULL, 
+		"--", 
+		NULL
+	}, 
+    { //funcMap[2]
+		NULL, 
+		"-v", 
+		NULL
+	}, 
+    { //funcMap[3]
+		NULL, 
+		"-O", 
+		NULL
+	}, 
+    { //funcMap[4]
+		NULL, 
+		"--", 
+		NULL
+	}, 
+    { //funcMap[5]
+		NULL, 
+		"-o", 
+		NULL
+	}, 
+    { //funcMap[6]
+		NULL, 
+		"--", 
+		NULL
+	}, 
+    { //funcMap[7]
+		NULL, 
+		"--", 
+		NULL
+	}, 
+    { //funcMap[8]
+		NULL, 
+		"-h", 
+		NULL
+	}, 
+    { //funcMap[9]
+		NULL, 
+		"-O2", 
+		NULL
+	}, 
 };
 
 unsigned long hash(const char *str){

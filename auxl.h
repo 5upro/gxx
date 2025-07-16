@@ -1,6 +1,7 @@
 #ifndef GXX_AUXILIARY_
 #define GXX_AUXILIARY_
 
+#include "utils.h"
 #include <stdio.h>
 
 #define endl "\n"
@@ -12,6 +13,23 @@ int selfcmp(const char *a, const char *b){
         i++;
     }
     return 1;
+}
+
+void compileMsg(int type){
+	if(VFLG){
+		if(type == CLANG){
+            printf(
+				"Compiling..." endl
+				"C File Detected!" endl
+			);
+        }
+		else if(type == CPP){
+            printf(
+				"Compiling..." endl
+				"C++ File Detected!" endl
+			);
+        }
+	}
 }
 
 void error(const char *message){
