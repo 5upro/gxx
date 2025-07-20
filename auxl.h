@@ -1,8 +1,8 @@
 #ifndef GXX_AUXILIARY_
 #define GXX_AUXILIARY_
 
-#include "utils.h"
 #include <stdio.h>
+#include "flags.h"
 
 #define endl "\n"
 
@@ -29,6 +29,15 @@ void compileMsg(int type){
 				"C++ File Detected!" endl
 			);
         }
+	}
+}
+
+void compileStatus(int errCode){
+	if(errCode == -1){
+		perror("Compilation Failed!");
+	}
+	else if(VFLG){
+		printf("Compilation Complete!" endl);
 	}
 }
 
