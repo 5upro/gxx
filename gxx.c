@@ -10,8 +10,6 @@ int main(int argc, char *argv[]){
 		sprintf(filePath, "%s" SEP "%s", path, argv[argc-1]);
 		compile(filePath);
 	}
-	else{
-        help();
-	}
+	else help();
 	return 0;
 }
